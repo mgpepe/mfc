@@ -3,7 +3,7 @@ var FormManager = (function(){
 	function formed(e){
 		e.preventDefault();
 		$.ajax({
-			url: '/formcontacts/submit_ajax',
+			url: '/form_contacts/submit_ajax',
 			type: 'POST',
 			data: $( this ).serialize(),
 			dataType: 'json',
