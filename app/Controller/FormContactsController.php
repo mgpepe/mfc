@@ -62,8 +62,7 @@ class FormContactsController extends AppController {
 						if($Email->send() ){
 							$response['success']=true;
 						}
-					}
-					catch {}
+					}catch (Exception $e){}
 					$response['success']=true; // even if mail fails, results were saved, form should go away
 				}else{
 					foreach ($this->FormContact->validationErrors as $error) {
