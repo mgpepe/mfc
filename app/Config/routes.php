@@ -27,7 +27,7 @@
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
 	Router::connect('/', array('controller' => 'form_contacts', 'action' => 'add', 'home'));
-	Router::connect('/mrmiyagiprawnsyou', array('controller' => 'formcontacts', 'action' => 'mrmiyagiprawnsyou', 'home'));
+	Router::connect('/mrmiyagiprawnsyou', array('controller' => 'form_contacts', 'action' => 'mrmiyagiprawnsyou', 'home'));
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */
