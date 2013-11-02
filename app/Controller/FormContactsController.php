@@ -49,31 +49,21 @@ class FormContactsController extends AppController {
 		if ($this->request->is('post')) {
 			if ($this->request->data) {
 				if ($this->FormContact->save($this->request->data)){
-					App::uses('CakeEmail', 'Network/Email');
-					$Email = new CakeEmail();
-					$Email->template('hello', 'default');
-					$Email->emailFormat('html');
-					$Email->from(array('me@miyagi.com' => 'My Site'));
-					$Email->to('petrov.petar@gmail.com');
-					$Email->viewVars(array('name' => $this->request->data['FormContact']['name']));
-					$Email->viewVars(array('email' => $this->request->data['FormContact']['email']));
-					$Email->viewVars(array('message' => $this->request->data['FormContact']['message']));
-					if($Email->send() ){
-						$response['success']=true;
+					try{
+						App::uses('CakeEmail', 'Network/Email');
+						$Email = new CakeEmail();
+						$Email->template('hello', 'default');
+						$Email->emailFormat('html');
+						$Email->from(array('me@miyagi.com' => 'My Site'));
+						$Email->to('petrov.petar@gmail.com');
+						$Email->viewVars(array('name' => $this->request->data['FormContact']['name']));
+						$Email->viewVars(array('email' => $this->request->data['FormContact']['email']));
+						$Email->viewVars(array('message' => $this->request->data['FormContact']['message']));
+						if($Email->send() ){
+							$response['success']=true;
+						}
 					}
-
-					// $email = new CakeEmail(EMAIL_CONFIG);
-					// $email->from(array(ADMIN_EMAIL => Configure::read('Application.name')))
-					// 	->to($application['Job']['apply_to_email'])
-					// 	->subject($this->request->data['FormSendFollowUp']['subject'])
-					// 	->emailFormat('html')
-					// 	->viewVars(array('body' => $this->request->data['FormSendFollowUp']['message']))
-					// 	->template('follow_up_email', 'default');
-					// if( $email->send($this->request->data['FormSendFollowUp']['subject']) ){
-					// 	// Return response
-					// 	$response['success']=true;	
-					// }
-					
+					$response['success']=true; // even if mail fails, results were saved, form should go away
 				}else{
 					foreach ($this->FormContact->validationErrors as $error) {
 						$response['message']=$error[0];
