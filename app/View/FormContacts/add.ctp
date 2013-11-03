@@ -1,21 +1,21 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="p-menu">
+<nav class="navbar navbar-default navbar-fixed-top hidden-xs" role="navigation " id="p-menu">
 	<!-- Brand and toggle get grouped for better mobile display -->
-	<div class="navbar-header">
+	<div class="navbar-header localscroll">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 			<span class="sr-only">Toggle navigation</span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="#page1" alt="Mr. Miyagi">&nbsp;</a>
+		<a class="navbar-brand " href="#page1" alt="Mr. Miyagi">&nbsp;</a>
 	</div>
 
 	<!-- Collect the nav links, forms, and other content for toggling -->
-	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	<div class="collapse navbar-collapse localscroll" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav">
 			<li class="active"><a href="#page2" style="color: #262624">JAPANESE FOOD &amp; LIQUOR</a></li>
 			<!-- <li ><a href="#page2" >SUNTORY</a></li> -->
-			<li ><a id="menu-link-foodmenu" href="#page3" class="menu-menu" >MENU</a></li>
+			<li ><a id="menu-link-foodmenu" href="#page3" class="menu-menu " >MENU</a></li>
 			<li class="navbar-dot">&#8226;</li>
 			<li ><a id="menu-link-photos" href="#page4" >PHOTOS</a></li>
 		 <li class="navbar-dot">&#8226;</li>
@@ -23,14 +23,55 @@
 		 <li class="navbar-dot">&#8226;</li>
 			<li ><a id="menu-link-about" href="#page6" >ABOUT</a></li>
 		</ul>
-		
-		
 	</div><!-- /.navbar-collapse -->
+	
 </nav>
+<div  id="p-menu-mobile" class="navbar-fixed-top visible-xs">
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header localscroll">
+		<a class="navbar-brand " href="#page1" alt="Mr. Miyagi">&nbsp;</a>
+	</div>
+
+	<!-- Collect the nav links, forms, and other content for toggling -->
+	<div class=" localscroll" id="asdf">
+		<ul class="">
+			<!-- <li ><a href="#page2" >SUNTORY</a></li> -->
+			<li ><a id="menu-link-foodmenu" href="#page3" class="menu-menu " >MENU</a></li>
+			<li ><a id="menu-link-photos" href="#page4" >PHOTOS</a></li>
+			<li ><a id="menu-link-contactus" href="#page5" >CONTACT</a></li>
+			<li ><a id="menu-link-about" href="#page6" >ABOUT</a></li>
+		</ul>
+	</div><!-- /.navbar-collapse -->
+	
+</div>
+
+<div class="navbar navbar-default navbar-fixed-top" id="food-subnav" style="margin-top:-100px;">
+	<ul  class="nav navbar-nav" id="food-nav-background">
+		<?php
+			for($i=0;$i<count($foodImages);$i++){
+				if($i==0) $active = 'active';
+				else $active='';
+				echo '<li ><a id="menu-link-about" data-target="#carousel-food" href="#page6" data-slide-to="'.$i.'" class="'.$active.'">';
+				echo $foodImages[$i]['FoodImage']['title'];
+				echo '</a></li>';
+				if($i+1<count($foodImages)){
+					echo '<li class="navbar-dot">&#8226;</li>';
+				}
+			}
+		?>
+		<!-- <li ><a id="menu-link-about" href="#page6" >DINNER</a></li>
+		<li class="navbar-dot">&#8226;</li>
+		<li ><a id="menu-link-about" href="#page6" >LATE NIGHT</a></li>
+		<li class="navbar-dot">&#8226;</li>
+		<li ><a id="menu-link-about" href="#page6" >COCKTIALS</a></li> -->
+	</ul>
+</div>
 
 	<div id="images">
 	<div class="pageblock" id="page1" style="height:1200px;"></div>
-		<div class="pageblock" id="page2" style="height:700px;"></div>
+	<div class="pageblock" id="page2" style="height:700px;">
+		<div id="gif-test"><img src="/img/bg2.gif" style="width:1500px; height:700px;"></div>
+	</div>
 	<div class="pageblock" id="page3" style="height:1500px;"></div>
 	<div class="pageblock" id="page4" style="height:1000px;"></div>
 	<div class="pageblock" id="page5" style="height:1200px;"></div>
@@ -40,21 +81,26 @@
 <div id="wrapper">
 
 	<div id="home-wrapper">
-		<div id="home-text">
+		<div id="home-text" class="localscroll">
+			<br/>
 		MR. M WANTS <br/>
 		YOU TO GO DOWN... <br/>
 		...FOR RELAXING TIMES.<br/><br/>
-		<a href="#page2" id="the-down-arrow" ><img src="/img/arrow-home-page.png"/></a>
+		<div style="height: 100px; position:relative">
+		<a href="#page2" id="the-down-arrow" ><img style="margin: 0" id="therowimage" src="/img/arrow-home-page.png"/></a>
+		</div>
 		</div>
 
 
 			<div id="social-bar" class="pull-left">
 				<div id="social-bar-text" style="">99 CHAPEL ST, Windsor, 3181 &#8226; 9529 9999 &#8226; EMAIL US &#8226; JOBS </div>
-				<div class="social-icon" ><a href="#"><img src="/img/social-instagram.png"></a></div>
-				<div class="social-icon"><a href="#"><img src="/img/social-twitter.png"></a></div>
-				<div class="social-icon"><a href="#"><img src="/img/social-facebook.png"></a></div>
+				<div class="social-icon" ><a target="_blank" href="http://instagram.com/mrmiyagimelbourne"><img src="/img/social-instagram.png"></a></div>
+				<div class="social-icon"><a target="_blank" href="https://twitter.com/MrMiyagiMelb"><img src="/img/social-twitter.png"></a></div>
+				<div class="social-icon"><a target="_blank" href="https://www.facebook.com/MrMiyagiMelbourne"><img src="/img/social-facebook.png"></a></div>
 
-				</div>
+			</div>
+
+
 		</div>
 		
 		<div id="suntory-wrapper">
@@ -70,11 +116,75 @@
 		<div id="menu-wrapper">
 		
 				<div id="menu-image">
+
+					<div id="carousel-food" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<?php for($i=0;$i<count($foodImages);$i++){
+								if($i==0) $active = 'active';
+								else $active='';
+								echo '<li data-target="#carousel-food" data-slide-to="'.$i.'" class="'.$active.'"></li>';
+							} ?>
+						</ol>
+
+						<div class="carousel-inner">
+							<?php
+							$i=0;
+							foreach ($foodImages as $image){
+								if($i==0) $active = 'active';
+								else $active='';
+								echo '<div class="item '.$active.'">';
+								echo '<img data-src="/img/foods/'.$image['FoodImage']['filename'].'" alt="900x500" src="/img/foods/'.$image['FoodImage']['filename'].'" style="margin:0 auto;">';
+								echo '  </div>';
+								$i++;
+							} ?>
+						</div>
+					</div>
 				</div>
 		</div>
 		
 		<div id="photo-wrapper">
-			<div id="heart"></div>
+
+
+
+
+<div id="carousel-example-captions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+<?php for($i=0;$i<count($galleryImages);$i++){
+	if($i==0) $active = 'active';
+		else $active='';
+	echo '<li data-target="#carousel-example-captions" data-slide-to="'.$i.'" class="'.$active.'"></li>';
+} ?>
+        </ol>
+        <div class="carousel-inner">
+<?php
+	$i=0;
+	foreach ($galleryImages as $image){
+		if($i==0) $active = 'active';
+		else $active='';
+		echo '<div class="item '.$active.'">';
+		echo '<img data-src="/img/hearts/'.$image['GalleryImage']['filename'].'" alt="900x500" src="/img/hearts/'.$image['GalleryImage']['filename'].'" style="margin:0 auto;">';
+		echo '  </div>';
+		$i++;
+	} ?>
+
+
+          
+        </div>
+<!--         <a class="left carousel-control" href="#carousel-example-captions" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-captions" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a> -->
+      </div>
+
+
+
+			<div id="el-image"></div>
+			<div id="left-arrow"><a href="#carousel-example-captions" data-slide="prev" class=""><img src="/img/left-arrow-gallery.png"/></a></div>
+			<div id="right-arrow"><a href="#carousel-example-captions" data-slide="next" class=""><img src="/img/right-arrow-gallery.png"/></a></div>
+
+			
 		</div>
 
 		<div id="form-wrapper">
@@ -130,3 +240,11 @@ Fusce quis nisl id ligula congue sollicitudin. Suspendisse sit amet ultrices sem
 			</div>
 		</div>
 </div>
+
+<script>
+// $('.carousel').carousel();
+$(function(){
+	
+});
+
+</script>

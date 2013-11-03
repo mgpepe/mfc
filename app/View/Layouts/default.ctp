@@ -13,13 +13,17 @@
 ?>
     <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" />
-    <!-- <link href='http://fonts.googleapis.com/css?family=Montserrat:700,400' rel='stylesheet' type='text/css'> -->
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:700,400' rel='stylesheet' type='text/css'>
         
-    <script type="text/javascript" src="/js/jquery.js"></script>
-    <script type="text/javascript" src="/js/jquery.localscroll.js"></script>
-    <script type="text/javascript" src="/js/jquery.scrollTo.js"></script>
+   <!--  <script type="text/javascript" src="/js/jquery-1.8.3.js"></script> -->
+   <script type="text/javascript" src="/js/jquery-1.9.1.js"></script>
+    <!-- <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script> -->
+    <script type="text/javascript" src="/js/jquery.localscroll-1.2.7.js"></script>
+    <script type="text/javascript" src="/js/jquery.scrollTo-1.4.3.1.js"></script>
     <script type="text/javascript" src="/js/scroll-manager.js"></script>
     <script type="text/javascript" src="/js/form-manager.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+    
 
 </head>
 

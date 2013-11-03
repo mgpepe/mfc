@@ -108,6 +108,11 @@ class FormContactsController extends AppController {
 		// 		$this->Session->setFlash(__('The form contact could not be saved. Please, try again.'));
 		// 	}
 		// }
+		$this->loadModel('GalleryImage');
+		$galleryImages = $this->GalleryImage->find('all');
+		$this->loadModel('FoodImage');
+		$foodImages = $this->FoodImage->find('all');
+		$this->set(compact('galleryImages', 'foodImages'));
 	}
 
 /**

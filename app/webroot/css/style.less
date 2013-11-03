@@ -25,9 +25,11 @@
 }
 
 
-
 // GENERAL THINGS
 ////////////////////////////////////
+body{
+	background: transparent;
+}
 #p-menu{
 
 	margin: 20px 0 0 0;
@@ -70,18 +72,82 @@
 		color: #fff;
 	}
 }
-#the-down-arrow{
+#p-menu-mobile{
+	margin: 0 0 0 0;
+	background: transparent url('../img/navbar-mobile-bg.png') no-repeat 0 0;
+	width: 640px;
+	height: 75px;
+	margin: 0 auto;
+	border: 0;
+	a{
+		font-family: 'nanamiblack';
+		// font-weight: bold;
+		line-height: 55px;
+		font-size: 20px;
+		padding: 0 5px;
+		color: #fff;
+		&.active{
+			color: #00D9FF;
+			&.menu-menu{
+				color: #E1FB5A;
+			}
+		}
+	}
+	#asdf{
+		li{
+			display: inline;
+		}
+		a{
+			font-size: 28px;
+			text-decoration: none;
+			line-height: 70px;
+		}
+	}
+	.navbar-header{
+		float: left;
+		width: 133px;
+		height: 75px;
 
+	}
+	.navbar-brand{
+		display: block;
+		width: 133px;
+		height: 75px;
+	}
 }
-
+#food-subnav{
+	background: none;
+	text-align: right;
+	width: 850px;
+	margin: 80px auto 0 auto;
+	border: 0;
+	transform: rotate(-0.5deg);
+	-ms-transform: rotate(-0.5deg); /* IE 9 */
+	-webkit-transform: rotate(-0.5deg); /* Safari and Chrome */
+	#food-nav-background{
+		float: right;
+		background: #E1FB5A;
+		display: inline;
+		font-family: 'nanamiblack';
+		font-size: 20px;
+		a{
+			padding:8px;
+			color: #262626;
+			&:hover{
+				color: #EC2F95;
+			}
+		}
+	}
+}
+#the-down-arrow{
+	position: absolute;
+}
 #wrapper {
 	// width:1044px;
 	margin:0 auto;
 	position:relative;
 	z-index:2;
 }
-
-
 // HOME 1 
 ////////////////////////////////////
 #home-wrapper{
@@ -150,7 +216,7 @@
 	height: 1500px;
 	text-align: center;
 	#menu-image{
-		background: url('../img/menu.png') no-repeat 0 0;
+		// background: pink; //url('../img/menu.png') no-repeat 0 0;
 		width: 891px;
 		height: 1214px;
 		margin: 0 auto 0 auto;
@@ -161,11 +227,25 @@
 #photo-wrapper{
 	height: 1000px;
 	text-align: center;
-	#heart{
-		background: url('../img/gallery-heart.png') no-repeat 0 0;
-		width: 678px;
+	// background: pink;
+	width: 900px;
+	height: 800px;
+	margin: 0 auto;
+	position: relative;
+	#el-image{
+		// background: red; //url('../img/gallery-heart.png') no-repeat 0 0;
+		width: 840px;
 		height: 628px;
-		margin: 0 auto 0 auto;
+	}
+	#left-arrow{
+		position: absolute;
+		top: 45%;
+		left: 0;
+	}
+	#right-arrow{
+		position: absolute;
+		top: 45%;
+		right: 0;
 	}
 }
 // FORM 5
@@ -242,7 +322,7 @@
 }
 
 #images #page2 {
-	background-image: url(../img/bg2.gif);
+	// background-image: url(../img/bg2.gif);
 	background-position:45% 0;
 	background-repeat:no-repeat;
 	background-color:#000;
