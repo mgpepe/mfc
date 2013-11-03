@@ -52,7 +52,7 @@
 				if($i==0) $active = 'active';
 				else $active='';
 				echo '<li ><a id="menu-link-about" data-target="#carousel-food" href="#page6" data-slide-to="'.$i.'" class="'.$active.'">';
-				echo $foodImages[$i]['FoodImage']['title'];
+				echo strtoupper($foodImages[$i]['FoodImage']['title'] );
 				echo '</a></li>';
 				if($i+1<count($foodImages)){
 					echo '<li class="navbar-dot">&#8226;</li>';
