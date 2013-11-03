@@ -66,11 +66,15 @@
 		<li ><a id="menu-link-about" href="#page6" >COCKTIALS</a></li> -->
 	</ul>
 </div>
-
-	<div id="images">
+<style type="text/css">
+html, body, #images, #gif-test{ width: 100% }
+</style>
+<div id="images">
 	<div class="pageblock" id="page1" style="height:1200px;"></div>
-	<div class="pageblock" id="page2" style="height:700px;">
-		<div id="gif-test"><img src="/img/bg2.gif" style="width:1500px; height:700px;"></div>
+	<div class="pageblock" id="page2" style="height:700px; ">
+		<div id="gif-test" style="width: 100%;  height: 700px; overflow: hidden; text-align: center;">
+			<img src="/img/bg2.gif" style="width:100%;">
+		</div>
 	</div>
 	<div class="pageblock" id="page3" style="height:1500px;"></div>
 	<div class="pageblock" id="page4" style="height:1000px;"></div>

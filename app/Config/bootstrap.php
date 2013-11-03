@@ -108,7 +108,7 @@ CakeLog::config('error', array(
 	'file' => 'error',
 ));
 
-CakePlugin::load('Composer', array('bootstrap' => true));
+#CakePlugin::load('Composer', array('bootstrap' => true));
 CakePlugin::load('Uploader');
 
 
