@@ -52,8 +52,7 @@ var ScrollManager = (function(){
 		    });
 		    $(window).scroll(function() {
 				if($(window).scrollTop() + $(window).height() >= $(document).height() - 200) {
-					alert('da');
-			   			if(scrollingToTop==false){
+			   		if(scrollingToTop==false){
 						scrollingToTop=true;
 						$('html,body').animate({scrollTop: 0}, 1000);
 					}
