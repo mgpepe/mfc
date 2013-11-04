@@ -23,6 +23,7 @@
     <script type="text/javascript" src="/js/scroll-manager.js"></script>
     <script type="text/javascript" src="/js/form-manager.js"></script>
     <script type="text/javascript" src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
     
 
 </head>

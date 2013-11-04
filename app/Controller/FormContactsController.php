@@ -56,9 +56,9 @@ class FormContactsController extends AppController {
 						$Email->emailFormat('html');
 						$Email->from(array('me@miyagi.com' => 'My Site'));
 						$Email->to('petrov.petar@gmail.com');
-						$Email->viewVars(array('name' => $this->request->data['FormContact']['name']));
+						// $Email->viewVars(array('name' => $this->request->data['FormContact']['name']));
 						$Email->viewVars(array('email' => $this->request->data['FormContact']['email']));
-						$Email->viewVars(array('message' => $this->request->data['FormContact']['message']));
+						// $Email->viewVars(array('message' => $this->request->data['FormContact']['message']));
 						if($Email->send() ){
 							$response['success']=true;
 						}
