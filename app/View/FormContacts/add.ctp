@@ -234,12 +234,15 @@ html, body, #images, #gif-test{ width: 100% }
     $(document).ready(function(){
       $("#jquery_jplayer_1").jPlayer({
         ready: function () {
+
           $(this).jPlayer("setMedia", {
-            oga: "/img/yamanote.ogg"
+          	 mp3: "/img/yamanote.mp3",
+            oga: "/img/yamanote.ogg",
+           
           }).jPlayer("play");
         },
         swfPath: "/js",
-        supplied: "oga"
+        supplied: "oga, mp3"
       });
       $("#jquery_jplayer_1").jPlayer( "play");
     });

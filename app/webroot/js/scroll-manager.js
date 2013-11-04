@@ -23,10 +23,7 @@ var ScrollManager = (function(){
 		}else{
 			$('#menu-link-about').addClass('active');
 		}
-		if(scrollness>6000 && scrollingToTop==false){
-			scrollingToTop=true;
-			$('html,body').animate({scrollTop: 0}, 1000);
-		}
+
 		if(foodMenuIs!=setFoodSubmenuForOn){
 			var margin= '';
 			if(!setFoodSubmenuForOn){
@@ -53,6 +50,14 @@ var ScrollManager = (function(){
 		    $( document ).scroll(function(e) {
 		    	setMenuTo( $(this).scrollTop() );
 		    });
+		    $(window).scroll(function() {
+			  if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+			   			if(scrollingToTop==false){
+						scrollingToTop=true;
+						$('html,body').animate({scrollTop: 0}, 1000);
+					}
+			   }
+			});
 		   
 		    // 
 			$(document).ready(function(){
