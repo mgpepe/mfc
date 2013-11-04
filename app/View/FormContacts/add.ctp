@@ -19,9 +19,7 @@
 			<li class="navbar-dot">&#8226;</li>
 			<li ><a id="menu-link-photos" href="#page4" >PHOTOS</a></li>
 		 <li class="navbar-dot">&#8226;</li>
-			<li ><a id="menu-link-contactus" href="#page5" >CONTACT US</a></li>
-		 <li class="navbar-dot">&#8226;</li>
-			<li ><a id="menu-link-about" href="#page6" >ABOUT</a></li>
+			<li ><a id="menu-link-contactus" href="#page5" >INFO</a></li>
 		</ul>
 	</div><!-- /.navbar-collapse -->
 	
@@ -38,8 +36,7 @@
 			<!-- <li ><a href="#page2" >SUNTORY</a></li> -->
 			<li ><a id="menu-link-foodmenu" href="#page3" class="menu-menu " >MENU</a></li>
 			<li ><a id="menu-link-photos" href="#page4" >PHOTOS</a></li>
-			<li ><a id="menu-link-contactus" href="#page5" >CONTACT</a></li>
-			<li ><a id="menu-link-about" href="#page6" >ABOUT</a></li>
+			<li ><a id="menu-link-contactus" href="#page5" >INFO</a></li>
 		</ul>
 	</div><!-- /.navbar-collapse -->
 	
@@ -79,14 +76,13 @@ html, body, #images, #gif-test{ width: 100% }
 	<div class="pageblock" id="page3" style="height:1500px;"></div>
 	<div class="pageblock" id="page4" style="height:1000px;"></div>
 	<div class="pageblock" id="page5" style="height:1200px;"></div>
-	<div class="pageblock" id="page6" style="height:1000px;"></div>
+	<div class="pageblock" id="page6" style="height:1200px;"></div>
 </div>
 
 <div id="wrapper">
 
 	<div id="home-wrapper">
 		<div id="home-text" class="localscroll">
-			<br/>
 		MR. M WANTS <br/>
 		YOU TO GO DOWN... <br/>
 		...FOR RELAXING TIMES.<br/><br/>
@@ -97,7 +93,7 @@ html, body, #images, #gif-test{ width: 100% }
 
 
 			<div id="social-bar" class="pull-left">
-				<div id="social-bar-text" style="">99 CHAPEL ST, Windsor, 3181 &#8226; 9529 9999 &#8226; EMAIL US &#8226; JOBS </div>
+				<div id="social-bar-text" style="">99 CHAPEL ST, Windsor, 3181 &#8226; 9529 5999  </div>
 				<div class="social-icon" ><a target="_blank" href="http://instagram.com/mrmiyagimelbourne"><img src="/img/social-instagram.png"></a></div>
 				<div class="social-icon"><a target="_blank" href="https://twitter.com/MrMiyagiMelb"><img src="/img/social-twitter.png"></a></div>
 				<div class="social-icon"><a target="_blank" href="https://www.facebook.com/MrMiyagiMelbourne"><img src="/img/social-facebook.png"></a></div>
@@ -193,7 +189,12 @@ html, body, #images, #gif-test{ width: 100% }
 
 		<div id="form-wrapper">
 			<div id="form-text">
-				MR. M ALWAYS HAS TIME FOR YOU. PUT YOURSELF IN HIS LITTLE BACK BOOK HERE.
+				<span class="blue-text">JAPANESE FOOD &amp; LIQUOR</span><br/>
+				DINNER WED TO SUN<br/>
+				(03) 9529 5999<br/>
+				INFO@MR.MIYAGI.COM.AU<br/>
+				99 CHAPEL ST. WINDSOR, 3181<br/>
+				<span class="blue-text">STAY IN TOUCH WITH MR. M. <BR>PUT YOURSELF IN HIS LITTLE <BR> BLACK BOOK HERE:</span>
 			</div>
 			<div id="form-expect">
 				EXPECT DRUNK EMAILS.
@@ -204,30 +205,21 @@ html, body, #images, #gif-test{ width: 100% }
 				echo $this->Form->create('FormContact', array(
 					'id'=>'cform',
 				));
-				echo $this->Form->input('name', array(
-					'id'=>'theformname',
-					'label'=>false,
-					'placeholder'=>'NAME GOES HERE.',
-					'style'=>'width: 840px; margin-bottom: 15px; padding: 10px 20px;',
-					'class'=>'inputx'			
-				));
+
 				echo $this->Form->input('email', array(
 					'label'=>false,
-					'placeholder'=>'EMAIL GOES HERE.',
+					'placeholder'=>'EMAIL ADDRESS HERE.',
 					'type'=>'text',
-					'style'=>'width: 840px; margin-bottom: 15px; margin-left: 88px;padding: 10px 20px;',
+					'div'=>false,
+					'style'=>'width: 740px; margin-bottom: 15px; padding: 10px 20px;',
 					'class'=>'required input email'
 				));
-				echo $this->Form->input('message', array(
-					'label'=>false,
-					'placeholder'=>'HAPPY WORDS GO HERE.',
-					'style'=>'width: 840px; margin-bottom: 15px; margin-left: 25px; height: 260px;padding: 10px 20px;',
-					'class'=>'inputx'			
-				));
+
 				echo $this->Form->submit('GO', array(
 					'label'=>false, 
 					'class'=>'',
-					'style'=>'width: 700px; background-color: #EC2F95; margin-left: 100px; border: 0;',
+					'div'=>false,
+					'style'=>'background-color: #00D9FF; margin-left: 12px; padding: 10px; border: 0;',
 				));
 				echo $this->Form->end();
 				?>
@@ -236,19 +228,11 @@ html, body, #images, #gif-test{ width: 100% }
 
 		<div id="about-wrapper">
 			<div id="about-text">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus cursus, lectus in luctus rutrum, ligula velit mollis quam, ut porta orci orci sed metus. Integer ac eleifend tellus, eget molestie elit. Pellentesque volutpat nunc eu purus ullamcorper placerat. Sed tempor sapien et nunc faucibus, in cursus massa aliquet. Integer ut velit ut lectus tempus aliquam vitae ac nunc. Suspendisse viverra, ligula in faucibus tempor, massa nulla egestas ligula, a viverra nisl nisi quis purus. Sed eu magna metus. Sed convallis rhoncus dui in scelerisque. Morbi gravida molestie orci, vitae gravida nibh. Integer a adipiscing dui. Cras quis ornare augue, in ullamcorper dui. Suspendisse ac augue faucibus mauris pellentesque euismod. Phasellus non est velit. Aliquam erat volutpat.
 
-Fusce quis nisl id ligula congue sollicitudin. Suspendisse sit amet ultrices sem, ut aliquet sem. Aliquam eu nulla lacinia, tempus lorem ac, malesuada diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dignissim pharetra est, ac eleifend nunc consequat et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam faucibus magna eu eros pellentesque, eget rhoncus quam pharetra. Cras vehicula, lacus nec molestie blandit, ligula eros elementum tortor, ac malesuada velit risus ut erat. Nulla facilisi. Etiam a interdum risus. Nullam id faucibus urna, sagittis feugiat dolor. Suspendisse sem quam, semper suscipit auctor eget, auctor id dui. Phasellus faucibus neque metus, vel placerat sem cursus condimentum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed quis purus quis lacus vehicula viverra. Donec vel libero molestie, commodo nibh in, pulvinar urna.
 
 
 			</div>
 		</div>
+		
 </div>
 
-<script>
-// $('.carousel').carousel();
-$(function(){
-	
-});
-
-</script>

@@ -2,11 +2,13 @@ var ScrollManager = (function(){
 	var currentSection = 'intro';
 	var setFoodSubmenuForOn = false;
 	var foodMenuIs = false;
+	var screenHeight = 0;
+	var scrollingToTop = false;
 	function killIt(item){
 		$('#'+item).fadeOut(1000);
 	}	
 	function setMenuTo(scrollness){
-		console.log('setMenuTo()');
+		if(scrollness==0) scrollingToTop=false;
 		resetMenu();
 		setFoodSubmenuForOn = false;
 		if(scrollness<1750){
@@ -21,6 +23,10 @@ var ScrollManager = (function(){
 		}else{
 			$('#menu-link-about').addClass('active');
 		}
+		if(scrollness>6000 && scrollingToTop==false){
+			scrollingToTop=true;
+			$('html,body').animate({scrollTop: 0}, 1000);
+		}
 		if(foodMenuIs!=setFoodSubmenuForOn){
 			var margin= '';
 			if(!setFoodSubmenuForOn){
@@ -28,15 +34,16 @@ var ScrollManager = (function(){
 			}else{
 				margin = '90px';
 			}
-			console.log('animate()', margin);
 			// $('#food-subnav').show();
 			$('#food-subnav').animate({'margin-top':margin});
 			foodMenuIs=setFoodSubmenuForOn;
 		}
-		
 	}
 	function resetMenu(){
 		$('#p-menu').find('li').find('a').removeClass('active');
+	}
+	function scrollComplete(e){
+		console.log('da');
 	}
 
 	return {
@@ -54,7 +61,7 @@ var ScrollManager = (function(){
 				jQuery.event.add(window, "resize", resizeFrame);
 
 				function resizeFrame(){
-					var h = $(window).height();
+					var h =screenHeight= $(window).height();
 					var w = $(window).width();
 
 						$("#page1").css("height", 1200);
@@ -62,7 +69,7 @@ var ScrollManager = (function(){
 						$("#page3").css("height", 1500);
 						$("#page4").css("height", 1000);
 						$("#page5").css("height", 1200);
-						$("#page6").css("height", 1000);
+						$("#page6").css("height", 1200);
 					
 
 					if (w < 1024) {
