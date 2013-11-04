@@ -51,8 +51,8 @@ var ScrollManager = (function(){
 		    	setMenuTo( $(this).scrollTop() );
 		    });
 		    $(window).scroll(function() {
-		    	if($(window).scrollTop() + $(window).height() >= $(document).height()){
-				// if($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
+		    	// if($(window).scrollTop() + $(window).height() >= $(document).height()){
+				if($(window).scrollTop() + $(window).height() >= $(document).height() - 200) {
 			   			if(scrollingToTop==false){
 						scrollingToTop=true;
 						$('html,body').animate({scrollTop: 0}, 1000);
