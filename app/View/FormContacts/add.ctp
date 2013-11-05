@@ -48,7 +48,7 @@
 			for($i=0;$i<count($foodImages);$i++){
 				if($i==0) $active = 'active';
 				else $active='';
-				echo '<li ><a id="menu-link-about" data-target="#carousel-food" href="#page6" data-slide-to="'.$i.'" class="'.$active.'">';
+				echo '<li ><a data-target="#carousel-food" href="#page6" data-slide-to="'.$i.'" class="submenu-item '.$active.'">';
 				echo strtoupper($foodImages[$i]['FoodImage']['title'] );
 				echo '</a></li>';
 				if($i+1<count($foodImages)){
@@ -56,11 +56,7 @@
 				}
 			}
 		?>
-		<!-- <li ><a id="menu-link-about" href="#page6" >DINNER</a></li>
-		<li class="navbar-dot">&#8226;</li>
-		<li ><a id="menu-link-about" href="#page6" >LATE NIGHT</a></li>
-		<li class="navbar-dot">&#8226;</li>
-		<li ><a id="menu-link-about" href="#page6" >COCKTIALS</a></li> -->
+
 	</ul>
 </div>
 <style type="text/css">
@@ -117,12 +113,12 @@ html, body, #images, #gif-test{ width: 100% }
 		
 				<div id="menu-image">
 
-					<div id="carousel-food" class="carousel slide" data-ride="carousel">
+					<div id="carousel-food" class="carousel slide" data-ride="carousel" data-interval="">
 						<ol class="carousel-indicators">
 							<?php for($i=0;$i<count($foodImages);$i++){
 								if($i==0) $active = 'active';
 								else $active='';
-								echo '<li data-target="#carousel-food" data-slide-to="'.$i.'" class="'.$active.'"></li>';
+								echo '<li data-target="#carousel-food" data-slide-to="'.$i.'" class=" '.$active.' "></li>';
 							} ?>
 						</ol>
 
@@ -132,7 +128,7 @@ html, body, #images, #gif-test{ width: 100% }
 							foreach ($foodImages as $image){
 								if($i==0) $active = 'active';
 								else $active='';
-								echo '<div class="item '.$active.'">';
+								echo '<div class="item '.$active.'" data-id="'.$i.'">';
 								echo '<img data-src="/img/foods/'.$image['FoodImage']['filename'].'" alt="900x500" src="/img/foods/'.$image['FoodImage']['filename'].'" style="margin:0 auto;">';
 								echo '  </div>';
 								$i++;
@@ -140,6 +136,20 @@ html, body, #images, #gif-test{ width: 100% }
 						</div>
 					</div>
 				</div>
+<script type="text/javascript">
+$("#carousel-food").on('slide.bs.carousel', function (event) {
+	var active = $(event.target).find('.carousel-inner > .item.active');
+	var from = active.index();
+	var next = $(event.relatedTarget);
+	var to = next.index();
+	var direction = event.direction;
+	setSubmenuTo(next.attr('data-id'));
+});
+function setSubmenuTo(id){
+	$('.submenu-item').removeClass('active');
+	$('.submenu-item[data-slide-to="'+id+'"]').addClass('active');
+}
+</script>
 		</div>
 		
 		<div id="photo-wrapper">
@@ -231,6 +241,8 @@ html, body, #images, #gif-test{ width: 100% }
 			<div id="about-text">
 
   <script type="text/javascript">
+
+
     $(document).ready(function(){
       $("#jquery_jplayer_1").jPlayer({
         ready: function () {

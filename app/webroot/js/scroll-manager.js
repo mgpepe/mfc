@@ -21,7 +21,7 @@ var ScrollManager = (function(){
 		}else if (scrollness<5400){
 			$('#menu-link-contactus').addClass('active');
 		}else{
-			$('#menu-link-about').addClass('active');
+			// $('#menu-link-about').addClass('active');
 		}
 
 		if(foodMenuIs!=setFoodSubmenuForOn){

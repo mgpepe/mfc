@@ -124,6 +124,9 @@ body {
 #food-subnav #food-nav-background a:hover {
   color: #EC2F95;
 }
+#food-subnav #food-nav-background a.active {
+  color: #EC2F95;
+}
 #the-down-arrow {
   position: absolute;
 }

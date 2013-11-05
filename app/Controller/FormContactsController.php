@@ -111,7 +111,9 @@ class FormContactsController extends AppController {
 		$this->loadModel('GalleryImage');
 		$galleryImages = $this->GalleryImage->find('all');
 		$this->loadModel('FoodImage');
-		$foodImages = $this->FoodImage->find('all');
+		$foodImages  = $this->FoodImage->find('all', array(
+			'order' => array('FoodImage.id ASC'),
+		));
 		$this->set(compact('galleryImages', 'foodImages'));
 	}
 

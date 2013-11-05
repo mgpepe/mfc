@@ -23,6 +23,7 @@ class FoodImagesController extends AppController {
 	public function index() {
 		$this->FoodImage->recursive = 0;
 		$this->set('foodImages', $this->paginate());
+
 		if ($this->request->is('post')) {
 			$this->FoodImage->create();
 			$filename = $this->request->data['FoodImage']['filename']['name'];
