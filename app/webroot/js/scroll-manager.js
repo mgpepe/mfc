@@ -39,9 +39,7 @@ var ScrollManager = (function(){
 	function resetMenu(){
 		$('#p-menu').find('li').find('a').removeClass('active');
 	}
-	function scrollComplete(e){
-		console.log('da');
-	}
+
 
 	return {
 		publicvar:null,
