@@ -190,7 +190,6 @@ function setSubmenuTo(id){
 
 
 
-			<div id="el-image"></div>
 			<div id="left-arrow"><a href="#carousel-example-captions" data-slide="prev" class=""><img src="/img/left-arrow-gallery.png"/></a></div>
 			<div id="right-arrow"><a href="#carousel-example-captions" data-slide="next" class=""><img src="/img/right-arrow-gallery.png"/></a></div>
 
@@ -201,9 +200,9 @@ function setSubmenuTo(id){
 			<div id="form-text">
 				<span class="blue-text">JAPANESE FOOD &amp; LIQUOR</span><br/>
 				DINNER WED TO SUN<br/>
-				(03) 9529 5999<br/>
-				INFO@MR.MIYAGI.COM.AU<br/>
-				99 CHAPEL ST. WINDSOR, 3181<br/>
+				<a href="tel:+1-800-555-5555" style="color: #fff;">(03) 9529 5999</a><br/>
+				<a href="mailto:info@mrmiyagi.com.au" style="color: #fff;">INFO@MRMIYAGI.COM.AU</a><br/>
+				<a href="http://maps.google.com/maps?hl=en&amp;q=99+CHAPEL+ST.+WINDSOR,+3181+australia" style="color: #fff;">99 CHAPEL ST. WINDSOR, 3181</a><br/>
 				<span class="blue-text">STAY IN TOUCH WITH MR. M. <BR>PUT YOURSELF IN HIS LITTLE <BR> BLACK BOOK HERE:</span>
 			</div>
 			<div id="form-expect">
