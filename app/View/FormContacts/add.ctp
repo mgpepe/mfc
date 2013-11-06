@@ -299,7 +299,6 @@ if(ua.indexOf('ipod')!=-1 || ua.indexOf('ipad')!=-1 || ua.indexOf('iphone')!=-1)
 	var obj = {oga: "/img/yamanote.ogg"};
 var ext = 'oga';
 if (ua.indexOf('safari')!=-1){ 
-	alert('in safari');
 	obj={mp3: "/img/yamanote.mp3"}
 	var ext = 'mp3';
 }
@@ -316,11 +315,9 @@ var ie = (function(){
     return v > 4 ? v : undef;
 }());
 if(ie===undefined){}else{
-	alert('in ie')
 	obj={mp3: "/img/yamanote.mp3"}
 	var ext = 'mp3';
 }
-alert(ext);
       $("#jquery_jplayer_1").jPlayer({
         ready: function () {
 
