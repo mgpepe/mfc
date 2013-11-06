@@ -240,25 +240,7 @@ function setSubmenuTo(id){
 		<div id="about-wrapper">
 			<div id="about-text">
 
-  <script type="text/javascript">
 
-
-    $(document).ready(function(){
-      $("#jquery_jplayer_1").jPlayer({
-        ready: function () {
-
-          $(this).jPlayer("setMedia", {
-          	 mp3: "/img/yamanote.mp3",
-            oga: "/img/yamanote.ogg",
-           
-          }).jPlayer("play");
-        },
-        swfPath: "/js",
-        supplied: "oga, mp3"
-      });
-      $("#jquery_jplayer_1").jPlayer( "play");
-    });
-  </script>
 <div id="jquery_jplayer_1" class="jp-jplayer" style="display:none;"></div>
   <div id="jp_container_1" class="jp-audio" style="display:none;">
     <div class="jp-type-single">
@@ -305,5 +287,51 @@ function setSubmenuTo(id){
 		
 </div>
 
+<script type="text/javascript">
 
+
+    $(document).ready(function(){
+    	// DETECT SAFARI
+var ua = navigator.userAgent.toLowerCase();
+if(ua.indexOf('ipod')!=-1 || ua.indexOf('ipad')!=-1 || ua.indexOf('iphone')!=-1){
+	$('#jquery_jplayer_1').remove();
+}else{
+	var obj = {oga: "/img/yamanote.ogg"};
+var ext = 'oga';
+if (ua.indexOf('safari')!=-1){ 
+	alert('in safari');
+	obj={mp3: "/img/yamanote.mp3"}
+	var ext = 'mp3';
+}
+// DETECT IE
+var ie = (function(){
+    var undef,
+        v = 3,
+        div = document.createElement('div'),
+        all = div.getElementsByTagName('i');
+    while (
+        div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->',
+        all[0]
+    );
+    return v > 4 ? v : undef;
+}());
+if(ie===undefined){}else{
+	alert('in ie')
+	obj={mp3: "/img/yamanote.mp3"}
+	var ext = 'mp3';
+}
+alert(ext);
+      $("#jquery_jplayer_1").jPlayer({
+        ready: function () {
+
+          $(this).jPlayer("setMedia", obj).jPlayer("play");
+        },
+        swfPath: "/js",
+        supplied: ext
+      });
+      $("#jquery_jplayer_1").jPlayer( "play");
+}
+
+    });
+  </script>
 
